@@ -13,12 +13,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Build and Deploy
-      run: |
-        
-        npm install --global surge
-        surge token ${{ secrets.SURGE_TOKEN }}
+    - name: Install dependencies
+      run: npm install  # Este paso es opcional, si tienes dependencias de Node.js
 
-        # Desplegar en Surge.sh
-        surge --project ./ --domain gallagher-primerp.surge.sh 
+    - name: Install Surge and Deploy
+      run: |
+
+        npm install --global surge
+
+        surge token ${{ secrets.SURGE_TOKEN }}
+         surge --project ./ --domain gallagher-primerp.surge.sh
 
