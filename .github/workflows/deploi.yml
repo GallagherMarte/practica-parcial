@@ -23,5 +23,5 @@ jobs:
         npm install --global surge
 
         surge token ${{ secrets.SURGE_TOKEN }}
-        surge --project ./ --domain gallagher-primerp.surge.sh
+        surge --project ./src --domain gallagher-primerp.surge.sh
 
