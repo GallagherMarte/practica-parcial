@@ -19,9 +19,8 @@ jobs:
 
     - name: Install Surge and Deploy
       run: |
-
-        npm install --global surge
-
-        surge token ${{ secrets.SURGE_TOKEN }}
-        surge --project ./src --domain gallagher-primerp.surge.sh
+      
+         npm install --global surge
+         surge token ${{ secrets.SURGE_TOKEN }}
+         surge --project ./src --domain gallagher-primerp.surge.sh
 
